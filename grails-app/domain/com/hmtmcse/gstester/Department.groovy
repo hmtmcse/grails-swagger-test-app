@@ -4,6 +4,7 @@ class Department {
 
     Integer id
     String name
+    String uuid
     String description
     Date lastUpdated
     Date dateCreated
@@ -12,5 +13,9 @@ class Department {
 
 
     static constraints = {
+    }
+
+    def beforeInsert (){
+        this.uuid = AppUtil.uuid()
     }
 }

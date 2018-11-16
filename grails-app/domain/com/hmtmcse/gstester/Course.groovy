@@ -5,6 +5,7 @@ class Course {
     Integer id
     String name
     String code
+    String uuid
     Date lastUpdated
     Date dateCreated
 
@@ -12,5 +13,9 @@ class Course {
     static hasMany = [student: Student]
 
     static constraints = {
+    }
+
+    def beforeInsert (){
+        this.uuid = AppUtil.uuid()
     }
 }
