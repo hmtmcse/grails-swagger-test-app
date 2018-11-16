@@ -4,6 +4,7 @@ class Department {
 
     Integer id
     String name
+    String displayName
     String uuid
     String description
     Date lastUpdated

@@ -4,6 +4,7 @@ class Student {
 
     Integer id
     String name
+    String identification
     String email
     String uuid
     String password

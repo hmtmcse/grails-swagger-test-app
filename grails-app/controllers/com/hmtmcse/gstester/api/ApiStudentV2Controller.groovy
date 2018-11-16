@@ -12,25 +12,27 @@ class ApiStudentV2Controller extends GsRestProcessor {
     }
 
     def getList(){
-        return list(studentApiDefinitionService.getStudentList())
+        return list(studentApiDefinitionService.list())
     }
 
 
     def postList(){
-        return list(studentApiDefinitionService.postStudentList())
+        return list(studentApiDefinitionService.list())
     }
 
     def getDetails(){
-        return details(studentApiDefinitionService.getDetails())
+        return details(studentApiDefinitionService.details())
     }
 
     def postDetails(){
-        return details(studentApiDefinitionService.getDetails())
+        return details(studentApiDefinitionService.details())
     }
+
 
     def postUpdate(){
         return update(studentApiDefinitionService.update())
     }
+
 
     def deleteDelete(){
         return delete(studentApiDefinitionService.delete())
