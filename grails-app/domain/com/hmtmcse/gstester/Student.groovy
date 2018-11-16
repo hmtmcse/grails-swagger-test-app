@@ -8,9 +8,13 @@ class Student {
     String password
     Date lastUpdated
     Date dateCreated
+    Department department
 
 
+    static hasMany = [course: Course]
 
     static constraints = {
+        department(nullable: true)
     }
+
 }
