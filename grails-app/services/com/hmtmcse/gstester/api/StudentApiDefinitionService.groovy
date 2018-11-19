@@ -21,7 +21,7 @@ class StudentApiDefinitionService {
 
 
     GsApiActionDefinition list(){
-        return readDefinition().successResponseAsList()
+        return readDefinition()
     }
 
 
@@ -32,7 +32,7 @@ class StudentApiDefinitionService {
         definition.addRequestProperty("password")
         definition.addRequestProperty("identification")
         definition.addResponseProperty("uuid")
-        definition.successResponseAsMap()
+        definition.successResponseAsData()
         return definition
     }
 
@@ -41,7 +41,7 @@ class StudentApiDefinitionService {
         GsApiActionDefinition definition = readDefinition()
         definition.addResponseProperty("identification")
         definition.addResponseProperty("uuid")
-        definition.successResponseAsMap()
+        definition.successResponseAsData()
         return definition
     }
 
@@ -79,7 +79,7 @@ class StudentApiDefinitionService {
         definition.addResponseProperty("name")
         definition.addResponseProperty("uuid")
         definition.addResponseProperty("identification")
-        definition.successResponseAsMap()
+        definition.successResponseAsData()
         return definition
     }
 }
