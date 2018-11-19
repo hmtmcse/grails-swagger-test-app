@@ -27,10 +27,10 @@ class StudentApiDefinitionService {
 
     GsApiActionDefinition createStudent(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.addRequestProperty("name").setIsRequired()
-        definition.addRequestProperty("email").setIsRequired()
-        definition.addRequestProperty("password").setIsRequired()
-        definition.addRequestProperty("identification").setIsRequired()
+        definition.addRequestProperty("name")
+        definition.addRequestProperty("email")
+        definition.addRequestProperty("password")
+        definition.addRequestProperty("identification")
         definition.addResponseProperty("uuid")
         definition.successResponseAsMap()
         return definition
