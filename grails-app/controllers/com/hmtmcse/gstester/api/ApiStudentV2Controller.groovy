@@ -37,4 +37,8 @@ class ApiStudentV2Controller extends GsRestProcessor {
     def deleteDelete(){
         return delete(studentApiDefinitionService.delete())
     }
+
+    def getSaveCustomData(){
+        return customProcessor(studentApiDefinitionService.custom())
+    }
 }
