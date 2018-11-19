@@ -54,11 +54,13 @@ class StudentApiDefinitionService {
         return definition
     }
 
+
     GsApiActionDefinition delete(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
         definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Deleted")
         return definition
     }
+
 
 
     GsApiActionDefinition custom(){
@@ -78,7 +80,6 @@ class StudentApiDefinitionService {
         definition.addResponseProperty("uuid")
         definition.addResponseProperty("identification")
         definition.successResponseAsMap()
-        definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Created")
         return definition
     }
 }
