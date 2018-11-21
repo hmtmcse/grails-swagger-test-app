@@ -14,6 +14,7 @@ class Department {
 
 
     static constraints = {
+        uuid(nullable: true)
     }
 
     def beforeInsert (){

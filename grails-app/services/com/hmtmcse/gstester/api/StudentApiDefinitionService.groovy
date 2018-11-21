@@ -64,11 +64,11 @@ class StudentApiDefinitionService {
 
 
     GsApiActionDefinition custom(){
-        GsApiActionDefinition definition = new GsApiActionDefinition()
-        definition.addRequestProperty("name").setIsRequired()
-        definition.addRequestProperty("email").setIsRequired()
-        definition.addRequestProperty("password").setIsRequired()
-        definition.addRequestProperty("identification").setIsRequired()
+        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
+        definition.addRequestProperty("name")
+        definition.addRequestProperty("email")
+        definition.addRequestProperty("password")
+        definition.addRequestProperty("identification")
         definition.customProcessor = new CustomProcessor() {
             @Override
             GsApiResponseData process(GsApiActionDefinition actionDefinition, GsParamsPairData paramData, ApiHelper apiHelper) {
@@ -79,6 +79,7 @@ class StudentApiDefinitionService {
         definition.addResponseProperty("name")
         definition.addResponseProperty("uuid")
         definition.addResponseProperty("identification")
+        definition.addResponseProperty("id")
         definition.successResponseAsData()
         return definition
     }
