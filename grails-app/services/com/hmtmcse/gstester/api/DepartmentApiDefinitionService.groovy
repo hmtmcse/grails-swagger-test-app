@@ -14,13 +14,16 @@ class DepartmentApiDefinitionService {
 
     private GsApiActionDefinition readDefinition(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Department>(Department)
-        definition.includeOnlyProperty(["name", "displayName", "description"])
+        definition.includeInResponse(["name", "displayName", "description"])
         return definition
     }
 
 
     GsApiActionDefinition list(){
-        return readDefinition()
+        GsApiActionDefinition definition = new GsApiActionDefinition<Department>(Department)
+        definition.includeAllPropertyToResponse()
+        definition.successResponseAsData()
+        return definition
     }
 
 
