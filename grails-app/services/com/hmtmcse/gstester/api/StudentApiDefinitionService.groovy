@@ -15,7 +15,7 @@ class StudentApiDefinitionService {
 
     private GsApiActionDefinition readDefinition(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.includeOnlyProperty(["name", "email", "id"])
+        definition.includeInResponse(["name", "email", "id"])
         return definition
     }
 
