@@ -3,6 +3,7 @@ package com.hmtmcse.gstester
 class Student {
 
     Integer id
+    Long rollNumber
     String name
     String identification
     String email
