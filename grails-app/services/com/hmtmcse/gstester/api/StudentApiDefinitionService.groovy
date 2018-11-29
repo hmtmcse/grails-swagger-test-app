@@ -1,7 +1,6 @@
 package com.hmtmcse.gstester.api
 
 import com.hmtmcse.gs.GsApiActionDefinition
-import com.hmtmcse.gs.GsRelationalEntityResponse
 import com.hmtmcse.gs.data.ApiHelper
 import com.hmtmcse.gs.data.GsApiResponseData
 import com.hmtmcse.gs.data.GsParamsPairData
