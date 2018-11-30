@@ -13,6 +13,7 @@ class Course {
     static hasMany = [student: Student]
 
     static constraints = {
+        uuid(nullable: true)
     }
 
     def beforeInsert (){
