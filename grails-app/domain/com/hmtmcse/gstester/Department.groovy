@@ -14,11 +14,10 @@ class Department {
 
 
     static constraints = {
-        uuid(nullable: true)
         description(nullable: true)
     }
 
-    def beforeInsert (){
+    def beforeValidate (){
         this.uuid = AppUtil.uuid()
     }
 }

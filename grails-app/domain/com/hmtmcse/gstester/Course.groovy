@@ -13,10 +13,9 @@ class Course {
     static hasMany = [student: Student]
 
     static constraints = {
-        uuid(nullable: true)
     }
 
-    def beforeInsert (){
+    def beforeValidate(){
         this.uuid = AppUtil.uuid()
     }
 }

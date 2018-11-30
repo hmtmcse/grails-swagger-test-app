@@ -3,7 +3,7 @@ package com.hmtmcse.gstester
 class Student {
 
     Integer id
-    Long rollNumber
+    Long nationalIdNumber
     String name
     String identification
     String email
@@ -18,11 +18,13 @@ class Student {
 
     static constraints = {
         department(nullable: true)
-        uuid(nullable: true)
     }
 
     def beforeInsert (){
         this.password = this.password.encodeAsMD5()
+    }
+
+    def beforeValidate(){
         this.uuid = AppUtil.uuid()
     }
 
