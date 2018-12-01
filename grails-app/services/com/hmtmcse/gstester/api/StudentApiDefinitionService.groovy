@@ -32,6 +32,7 @@ class StudentApiDefinitionService {
         definition.addRelationalEntityResponse("department")
         definition.reResponseData().addResponseProperty("displayName")
         definition.reResponseData().addResponseProperty("uuid")
+        definition.successResponseAsData()
         return definition
     }
 
