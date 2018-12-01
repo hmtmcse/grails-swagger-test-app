@@ -21,7 +21,7 @@ class ErTestingController {
     def student() {
         def list = Student.createCriteria().list {
             order("department", "asc")
-        };
+        }
         render(list as JSON)
     }
 

@@ -15,12 +15,12 @@ class DataInitService {
                 [name: "EEE", displayName: "Electrical & Electronic Engineering"],
                 [name: "TE", displayName: "Textile Engineering"]
         ]
-
         if (Department.count == 0) {
             departments.each { department ->
                 new Department(department).save(flush: true)
             }
         }
+
 
 
         def courses = [
@@ -36,6 +36,7 @@ class DataInitService {
             }
         }
 
+
         def students = [
                 [name: "Touhid Mia", identification: "13", email: "hmtm.cse@email.local", password: "123456", "course": [1, 2], "nationalIdNumber": 1000, department: Department.findByName("CSE")],
                 [name: "Masumul Hassan", identification: "1", email: "masumul@email.local", password: "123456", "course": [3, 4], "nationalIdNumber": 1001, department: Department.findByName("CSE")],
@@ -49,11 +50,12 @@ class DataInitService {
                 [name: "Badol", identification: "41", email: "badol@email.local", password: "123456", "course": [5, 1], "nationalIdNumber": 1007, department: Department.findByName("TE")],
                 [name: "Nodi", identification: "42", email: "nodi@email.local", password: "123456", "course": [1, 2], "nationalIdNumber": 1008, department: Department.findByName("TE")],
         ]
-
         if (Student.count() == 0) {
             students.each { student ->
                 new Student(student).save(flush: true)
             }
         }
+
+
     }
 }

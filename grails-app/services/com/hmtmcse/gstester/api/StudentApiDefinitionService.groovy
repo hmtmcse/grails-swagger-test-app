@@ -20,6 +20,12 @@ class StudentApiDefinitionService {
     }
 
 
+    GsApiActionDefinition count() {
+        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
+        return definition
+    }
+
+
     GsApiActionDefinition list() {
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
         definition.includeAllPropertyToResponse()

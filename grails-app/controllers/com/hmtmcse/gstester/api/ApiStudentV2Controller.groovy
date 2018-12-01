@@ -41,4 +41,8 @@ class ApiStudentV2Controller extends GsRestProcessor {
     def getSaveCustomData(){
         return customProcessor(studentApiDefinitionService.custom())
     }
+
+    def getCount(){
+        return count(studentApiDefinitionService.count())
+    }
 }
