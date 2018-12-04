@@ -7,6 +7,8 @@ import com.hmtmcse.gstester.Student
 
 class ApiStudentV1Controller extends GsRestProcessor {
 
+    StudentApiDefinitionService studentApiDefinitionService
+
     def postCreate(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
         definition.addRequestProperty("name")
@@ -85,6 +87,10 @@ class ApiStudentV1Controller extends GsRestProcessor {
     def getCount(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
         return count(definition)
+    }
+
+    def postCustom(){
+        return customProcessor(studentApiDefinitionService.custom())
     }
 
 }

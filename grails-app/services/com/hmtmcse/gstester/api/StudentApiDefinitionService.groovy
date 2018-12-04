@@ -12,69 +12,6 @@ class StudentApiDefinitionService {
 
     StudentService studentService
 
-
-    private GsApiActionDefinition readDefinition(){
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.includeInResponse(["name", "email", "id"])
-        return definition
-    }
-
-
-    GsApiActionDefinition count() {
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        return definition
-    }
-
-
-    GsApiActionDefinition list() {
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.includeAllPropertyToResponse()
-        definition.addRelationalEntityResponse("department")
-        definition.reResponseData().addResponseProperty("displayName")
-        definition.reResponseData().addResponseProperty("uuid")
-        definition.successResponseAsData()
-        return definition
-    }
-
-
-    GsApiActionDefinition createStudent(){
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.addRequestProperty("name")
-        definition.addRequestProperty("email")
-        definition.addRequestProperty("password")
-        definition.addRequestProperty("identification")
-        definition.addResponseProperty("uuid")
-        definition.successResponseAsData()
-        return definition
-    }
-
-
-    GsApiActionDefinition details(){
-        GsApiActionDefinition definition = readDefinition()
-        definition.addResponseProperty("identification")
-        definition.addResponseProperty("uuid")
-        definition.successResponseAsData()
-        return definition
-    }
-
-
-    GsApiActionDefinition update(){
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.addRequestProperty("email")
-        definition.addRequestProperty("name")
-        definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Updated")
-        return definition
-    }
-
-
-    GsApiActionDefinition delete(){
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Deleted")
-        return definition
-    }
-
-
-
     GsApiActionDefinition custom(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
         definition.addRequestProperty("name")
