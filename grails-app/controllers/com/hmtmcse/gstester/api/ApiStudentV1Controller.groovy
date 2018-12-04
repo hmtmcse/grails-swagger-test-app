@@ -26,6 +26,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
         definition.addRelationalEntityResponse("department")
         definition.reResponseData().addResponseProperty("displayName")
         definition.reResponseData().addResponseProperty("uuid")
+        definition.includeAllPropertyToWhereFilter()
         definition.successResponseAsData()
         return list(definition)
     }
@@ -37,6 +38,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
         definition.addRelationalEntityResponse("department")
         definition.reResponseData().addResponseProperty("displayName")
         definition.reResponseData().addResponseProperty("uuid")
+        definition.includeAllPropertyToWhereFilter()
         definition.successResponseAsData()
         return list(definition)
     }
@@ -46,6 +48,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
         definition.includeInResponse(["name", "email", "id"])
         definition.addResponseProperty("identification")
         definition.addResponseProperty("uuid")
+        definition.includeAllPropertyToWhereFilter()
         definition.successResponseAsData()
         return details(definition)
     }
@@ -55,6 +58,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
         definition.includeInResponse(["name", "email", "id"])
         definition.addResponseProperty("identification")
         definition.addResponseProperty("uuid")
+        definition.includeAllPropertyToWhereFilter()
         definition.successResponseAsData()
         return details(definition)
     }
@@ -64,6 +68,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
         definition.addRequestProperty("email")
         definition.addRequestProperty("name")
+        definition.addToWhereFilterProperty("id")
         definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Updated")
         return update(definition)
     }
@@ -71,6 +76,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
 
     def deleteDelete(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
+        definition.addToWhereFilterProperty("id")
         definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Deleted")
         return delete(definition)
     }
