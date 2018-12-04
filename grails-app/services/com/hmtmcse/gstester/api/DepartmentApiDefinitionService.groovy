@@ -23,7 +23,10 @@ class DepartmentApiDefinitionService {
 
     GsApiActionDefinition list(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Department>(Department)
-        definition.includeAllThenExcludeFromResponse(['id', 'lastUpdated', 'dateCreated', 'student'])
+        definition.includeAllPropertyToResponse()
+        definition.addRelationalEntityResponse("student")
+        definition.reResponseData().addResponseProperty("id")
+        definition.includeAllPropertyToWhereFilter()
         definition.successResponseAsData()
         return definition
     }
