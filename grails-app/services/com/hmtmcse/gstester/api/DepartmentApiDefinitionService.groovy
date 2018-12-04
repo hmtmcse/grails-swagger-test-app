@@ -43,6 +43,7 @@ class DepartmentApiDefinitionService {
     GsApiActionDefinition details(){
         GsApiActionDefinition definition = readDefinition()
         definition.addResponseProperty("uuid")
+        definition.includeAllPropertyToWhereFilter()
         definition.successResponseAsData()
         return definition
     }
@@ -52,6 +53,7 @@ class DepartmentApiDefinitionService {
         GsApiActionDefinition definition = new GsApiActionDefinition<Department>(Department)
         definition.addRequestProperty("name")
         definition.addRequestProperty("displayName")
+        definition.addToWhereFilterProperty("id")
         definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Updated")
         return definition
     }
@@ -59,6 +61,7 @@ class DepartmentApiDefinitionService {
 
     GsApiActionDefinition delete(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Department>(Department)
+        definition.addToWhereFilterProperty("id")
         definition.successResponseFormat = GsApiResponseData.successMessage("Successfully Deleted")
         return definition
     }
