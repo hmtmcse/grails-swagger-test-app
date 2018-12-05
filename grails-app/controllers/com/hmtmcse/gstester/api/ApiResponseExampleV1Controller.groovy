@@ -47,7 +47,7 @@ class ApiResponseExampleV1Controller extends GsRestProcessor {
 
     def postAddResponseProperty(){
         GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.addRequestProperty("name").typeCast()
+        definition.addRequestProperty("name").enableTypeCast()
         definition.addRequestProperty("email")
         definition.addRequestProperty("password")
         definition.addRequestProperty("identification")
@@ -62,7 +62,7 @@ class ApiResponseExampleV1Controller extends GsRestProcessor {
         definition.addResponseProperty("dateCreated").customResponseParamProcessor = new CustomResponseParamProcessor() {
             @Override
             Object process(String fieldName, Object domainRow, GsApiResponseProperty propertyDefinition) {
-                return domainRow[fieldName].format( 'M-d-yyyy' )
+                return domainRow[fieldName]
             }
         }
         definition.successResponseAsData()
