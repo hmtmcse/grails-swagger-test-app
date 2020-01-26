@@ -11,6 +11,7 @@ class CourseDefinitionService {
         GsApiActionDefinition definition = new GsApiActionDefinition<Course>(Course)
         definition.addRequestProperty("name").required()
         definition.addRequestProperty("code").required()
+        definition.addRequestProperty("student")
         return definition
     }
 

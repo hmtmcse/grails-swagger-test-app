@@ -16,6 +16,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
         definition.addRequestProperty("email")
         definition.addRequestProperty("password")
         definition.addRequestProperty("studentId")
+        definition.addRequestProperty("course")
         definition.addRequestProperty("nId")
         definition.addResponseProperty("uuid")
         definition.successResponseAsData()
