@@ -11,16 +11,7 @@ class ApiStudentV1Controller extends GsRestProcessor {
     StudentDefinitionService studentDefinitionService
 
     def postCreate(){
-        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
-        definition.addRequestProperty("name")
-        definition.addRequestProperty("email")
-        definition.addRequestProperty("password")
-        definition.addRequestProperty("studentId")
-        definition.addRequestProperty("course")
-        definition.addRequestProperty("nId")
-        definition.addResponseProperty("uuid")
-        definition.successResponseAsData()
-        return create(definition)
+        return create(studentDefinitionService.create())
     }
 
 

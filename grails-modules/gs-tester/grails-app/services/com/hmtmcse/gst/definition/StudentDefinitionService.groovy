@@ -33,4 +33,17 @@ class StudentDefinitionService {
         definition.successResponseAsData()
         return definition
     }
+
+    GsApiActionDefinition create(){
+        GsApiActionDefinition definition = new GsApiActionDefinition<Student>(Student)
+        definition.addRequestProperty("name")
+        definition.addRequestProperty("email")
+        definition.addRequestProperty("password")
+        definition.addRequestProperty("studentId")
+        definition.addRequestProperty("course")
+        definition.addRequestProperty("nId")
+        definition.addResponseProperty("uuid")
+        definition.successResponseAsData()
+        return definition
+    }
 }
